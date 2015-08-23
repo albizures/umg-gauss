@@ -1,9 +1,16 @@
 timeTrans = 0.5s
 animation-transition(n)
-	transition: all n ease-in-out
 	-webkit-transition all n ease-in-out
 	-moz-transition all n ease-in-out
-
+	-ms-transition all n ease-in-out
+	-o-transition all n ease-in-out
+	transition all n ease-in-out
+scale-transform(n)
+	-webkit-transform: scale(n)
+	-moz-transform: scale(n)
+	-ms-transform: scale(n)// IE9 only
+	-o-transform: scale(n)
+	transform: scale(n)
 body
 	overflow hidden;
 main.item
@@ -16,6 +23,8 @@ main.item
 	.collection
 		animation-transition(timeTrans)
 		width 400px
+		.collection-item
+			cursor pointer
 	&.active
 		width: 173px
 		border-radius: 50%
@@ -28,15 +37,28 @@ main.item
 				opacity: 0
 				display none
 	&.second
-		transform scale(10)
+		scale-transform(10)
+
+.seccion,.close
+	animation-transition(timeTrans)
+	position fixed
+	top 0
+.close
+	margin 20px
+	color white
+	font-size 40px
+	right -100%
+	z-indesx 200
+	&.active
+		right 0%
 
 .seccion
 	padding 10px
-	position fixed
 	height 100%
 	width 100%
-	animation-transition(timeTrans)
-	top 0
 	left -100%
+	div.card
+		width 500px
+		margin 0 auto
 	&.active
 		left 0

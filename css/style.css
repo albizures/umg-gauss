@@ -7,15 +7,22 @@ main.item {
   position: static;
   background: #fff;
   border-radius: 3px;
-  transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 main.item .collection {
-  transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   width: 400px;
+}
+main.item .collection .collection-item {
+  cursor: pointer;
 }
 main.item.active {
   width: 173px;
@@ -32,18 +39,41 @@ main.item.active .collection * {
   display: none;
 }
 main.item.second {
+  -webkit-transform: scale(10);
+  -moz-transform: scale(10);
+  -ms-transform: scale(10);
+  -o-transform: scale(10);
   transform: scale(10);
+}
+.seccion,
+.close {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  position: fixed;
+  top: 0;
+}
+.close {
+  margin: 20px;
+  color: #fff;
+  font-size: 40px;
+  right: -100%;
+  z-indesx: 200;
+}
+.close.active {
+  right: 0%;
 }
 .seccion {
   padding: 10px;
-  position: fixed;
   height: 100%;
   width: 100%;
-  transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  top: 0;
   left: -100%;
+}
+.seccion div.card {
+  width: 500px;
+  margin: 0 auto;
 }
 .seccion.active {
   left: 0;
