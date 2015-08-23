@@ -1,0 +1,41 @@
+timeTrans = 0.5s
+animation-transition(n)
+	transition: all n ease-in-out
+	-webkit-transition all n ease-in-out
+	-moz-transition all n ease-in-out
+
+body
+	overflow hidden;
+main.item
+	width 400px
+	margin 100px auto
+	position static
+	background: white
+	animation-transition(timeTrans)
+	.collection
+		animation-transition(timeTrans)
+		width 400px
+	&.active
+		width: 173px
+		border-radius: 50%
+		.collection
+			border 0
+			border-radius: 50%
+			height: 173px
+			width: 173px
+			*
+				opacity: 0
+				display none
+	&.second
+		transform scale(10)
+
+.seccion
+	padding 10px
+	position fixed
+	height 100%
+	width 100%
+	animation-transition(timeTrans)
+	top 0
+	left -100%
+	&.active
+		left 0

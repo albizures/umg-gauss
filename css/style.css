@@ -1,0 +1,49 @@
+body {
+  overflow: hidden;
+}
+main.item {
+  width: 400px;
+  margin: 100px auto;
+  position: static;
+  background: #fff;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+}
+main.item .collection {
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  width: 400px;
+}
+main.item.active {
+  width: 173px;
+  border-radius: 50%;
+}
+main.item.active .collection {
+  border: 0;
+  border-radius: 50%;
+  height: 173px;
+  width: 173px;
+}
+main.item.active .collection * {
+  opacity: 0;
+  display: none;
+}
+main.item.second {
+  transform: scale(10);
+}
+.seccion {
+  padding: 10px;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  top: 0;
+  left: -100%;
+}
+.seccion.active {
+  left: 0;
+}

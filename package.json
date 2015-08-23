@@ -1,0 +1,23 @@
+{
+  "name": "umg-gauss",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "dev": "harp server & browser-sync start --proxy 'localhost:9000' --files '*.html, *.js, *.css'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/albizures/umg-gauss.git"
+  },
+  "author": "",
+  "license": " ",
+  "bugs": {
+    "url": "https://github.com/albizures/umg-gauss/issues"
+  },
+  "homepage": "https://github.com/albizures/umg-gauss",
+  "devDependencies": {
+    "browser-sync": "^2.8.2",
+    "harp": "^0.17.0"
+  }
+}
