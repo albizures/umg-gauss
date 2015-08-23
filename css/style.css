@@ -1,3 +1,9 @@
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 body {
   overflow: hidden;
 }
@@ -20,6 +26,7 @@ main.item .collection {
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   width: 400px;
+  overflow: hidden;
 }
 main.item .collection .collection-item {
   cursor: pointer;
@@ -57,10 +64,11 @@ main.item.second {
 }
 .close {
   margin: 20px;
+  cursor: pointer;
   color: #fff;
   font-size: 40px;
   right: -100%;
-  z-indesx: 200;
+  z-index: 200;
 }
 .close.active {
   right: 0%;
@@ -73,7 +81,7 @@ main.item.second {
 }
 .seccion div.card {
   width: 500px;
-  margin: 0 auto;
+  margin: 100px auto;
 }
 .seccion.active {
   left: 0;

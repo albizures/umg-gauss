@@ -11,6 +11,13 @@ scale-transform(n)
 	-ms-transform: scale(n)// IE9 only
 	-o-transform: scale(n)
 	transform: scale(n)
+
+
+*
+	-webkit-user-select: none;  
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 body
 	overflow hidden;
 main.item
@@ -23,6 +30,7 @@ main.item
 	.collection
 		animation-transition(timeTrans)
 		width 400px
+		overflow hidden;
 		.collection-item
 			cursor pointer
 	&.active
@@ -45,10 +53,11 @@ main.item
 	top 0
 .close
 	margin 20px
+	cursor pointer
 	color white
 	font-size 40px
 	right -100%
-	z-indesx 200
+	z-index 200
 	&.active
 		right 0%
 
@@ -59,6 +68,6 @@ main.item
 	left -100%
 	div.card
 		width 500px
-		margin 0 auto
+		margin 100px auto
 	&.active
 		left 0

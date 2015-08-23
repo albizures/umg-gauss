@@ -1,4 +1,7 @@
 (function($,_){
+	$.estado = {
+		animation : false
+	}
 	$.ecuaciones = [];
 	$.colors = {
 		'resta' : 'orange darken-2',
@@ -6,7 +9,7 @@
 		'gauss' : 'blue-grey',
 		'multiplicacion' : 'deep-orange darken-2'
 	}
-	window.onload = function(){
+	/*window.onload = function(){
 		var ecuacion = _.getElementById('ecuacion'),
 			agregar = _.getElementById('agregar');
 		agregar.addEventListener('click',function(){
@@ -17,7 +20,7 @@
 
 			console.log(ecuaciones);
 		});
-	};
+	};*/
 })(window,document);
 
 
@@ -28,10 +31,12 @@ function onLoad () {
 	$(window).click(onClickWindow);
 }
 function onClickCollectionItem (event) {
+	if(estado.animation) return;
 	var seccion = $(this).attr('class').replace('collection-item','').trim();
 	var parent = $(this).parents('main');
 	var self = this;
 	if(!$(parent).hasClass('active')){
+		estado.animation = true;
 		$(parent).toggleClass('active');
 		setTimeout(function () {
 			$(parent).toggleClass('second');
@@ -40,13 +45,21 @@ function onClickCollectionItem (event) {
 		setTimeout(function () {
 			$('.seccion.'+seccion).toggleClass('active');
 			$('.close').toggleClass('active');
+			setTimeout(function () {
+				estado.animation = false;
+			},500);
 		},900);
 	}
 }
 function onClickWindow (event) {
+	console.log('estado ',estado.animation);
+	if(estado.animation) return;
+	console.log('despues ',estado.animation);
 	if($(event.target).hasClass('seccion') || $(event.target).hasClass('close')){
+		console.log('cambio');
+		estado.animation = true;
 		$('.close').toggleClass('active');
-		$(event.target).toggleClass('active');
+		$('.seccion.active').toggleClass('active');
 		setTimeout(function () {
 				$('main.item').toggleClass('second');
 				for(var index in colors){
@@ -54,11 +67,14 @@ function onClickWindow (event) {
 				}
 		},500)
 		setTimeout(function () {
-			console.log('salir');
 			$('main.item').toggleClass('active');
+			setTimeout(function () {
+				estado.animation = false;
+			},500);
 		},900);
 	}
 }
+
 /*
 "abc def+(1.1+{ghi})".match(/[^+/*()-]+/g).filter(
     function(x) { return !/^{.+?}$/.test(x) })*/
