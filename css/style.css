@@ -78,11 +78,41 @@ main.item.second {
   height: 100%;
   width: 100%;
   left: -100%;
+  overflow-y: none;
 }
 .seccion div.card {
-  width: 500px;
-  margin: 100px auto;
+  width: 900px;
+  padding: 20px;
+  margin: 20px auto;
 }
 .seccion.active {
   left: 0;
+  overflow-y: auto;
+}
+.matriz {
+  position: relative;
+  padding: 10px;
+  display: inline-block;
+}
+.matriz input {
+  height: 2rem;
+  text-align: center;
+}
+.matriz:before,
+.matriz:after {
+  top: 0px;
+  content: '';
+  position: absolute;
+  border-top: 2px solid rgba(0,0,0,0.5);
+  border-bottom: 2px solid rgba(0,0,0,0.5);
+  width: 6px;
+  height: 100%;
+}
+.matriz:before {
+  border-left: 2px solid rgba(0,0,0,0.5);
+  left: 0px;
+}
+.matriz:after {
+  border-right: 2px solid rgba(0,0,0,0.5);
+  right: 0;
 }

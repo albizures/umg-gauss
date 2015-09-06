@@ -14,7 +14,7 @@ scale-transform(n)
 
 
 *
-	-webkit-user-select: none;  
+	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
@@ -66,8 +66,32 @@ main.item
 	height 100%
 	width 100%
 	left -100%
+	overflow-y: none;
 	div.card
-		width 500px
-		margin 100px auto
+		width 900px
+		padding 20px
+		margin 20px auto
 	&.active
 		left 0
+		overflow-y: auto;
+.matriz
+	position: relative
+	padding 10px
+	display inline-block
+	input
+		height: 2rem;
+		text-align center
+	&:before, &:after
+		top: 0px;
+		content: '';
+		position: absolute;
+		border-top: 2px solid rgba(0, 0, 0, 0.5);
+		border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+		width: 6px;
+		height: 100%;
+	&:before
+		border-left: 2px solid rgba(0, 0, 0, .5);
+		left: 0px;
+	&:after
+		border-right: 2px solid rgba(0, 0, 0, .5);
+		right 0

@@ -23,7 +23,14 @@
 	};*/
 })(window,document);
 
+Handlebars.registerHelper('list', function(items, options) {
+  var out = ''
 
+  for(var i=0, l=items.length; i<l; i++) {
+    out = out + options.fn(items[i]);
+  }
+  return out
+});
 
 $(onLoad);
 function onLoad () {
@@ -56,11 +63,11 @@ function onClickCollectionItem (event) {
 	}
 }
 function onClickWindow (event) {
-	console.log('estado ',estado.animation);
+	//console.log('estado ',estado.animation);
 	if(estado.animation) return;
-	console.log('despues ',estado.animation);
-	if($(event.target).hasClass('seccion') || $(event.target).hasClass('close')){
-		console.log('cambio');
+	//console.log('despues ',estado.animation);
+	if(/*$(event.target).hasClass('seccion') ||*/ $(event.target).hasClass('close')){
+		//console.log('cambio');
 		estado.animation = true;
 		$('.close').toggleClass('active');
 		$('.seccion.active').toggleClass('active');

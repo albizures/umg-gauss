@@ -27,24 +27,65 @@
 		</ul>
 	</main>
 	<i class="material-icons close">close</i>
-	<div class="seccion resta">
-		 <div class="card hoverable">aaa</div>
+	<div class="seccion resta row">
+		 <div class="card hoverable">
+			<div id="resta" class="col l12">
+				contenido
+			</div>
+		 </div>
 	</div>
 	<div class="seccion suma">
-		 <div class="card hoverable">aaaa</div>
+		 <div class="card hoverable row">
+			<div id="suma" class="col l12">
+				contenido
+			</div>
+		 </div>
 	</div>
 	<div class="seccion multiplicacion">
-		 <div class="card hoverable">aaa</div>
+		 <div class="card hoverable row">
+			<div id="multiplicacion" class="col l12">
+
+    	</div>
+		 </div>
 	</div>
 	<div class="seccion gauss">
-		 <div class="card hoverable">aaa</div>
+		<div class="card hoverable row">
+			<div id="gauss" class="col 12">
+				contenido
+			</div>
+		</div>
 	</div>
 	<!--
 	<input id="ecuacion" type="text">
 	<button id="agregar">agregar</button> -->
+	<script src="http://localhost:35729/livereload.js" charset="utf-8"></script>
 	<script src="js/jquery.js" charset="utf-8"></script>
+	<script src="js/handlebars.js" charset="utf-8"></script>
 	<script src="js/materialize.js" charset="utf-8"></script>
 	<script src="js/init.js" charset="utf-8"></script>
 	<script src="js/gauss.js"></script>
+	<script src="js/suma.js" charset="utf-8"></script>
+	<script src="js/resta.js" charset="utf-8"></script>
+	<script src="js/multiplicacion.js" charset="utf-8"></script>
+
+	<script id="multiplicacion-template" type="text/x-handlebars-template">
+		<div class="row">
+			<p class="left">Ingrese los datos las matrices para multiplicar</p>
+			<button id="add-multiplicacion" class="waves-effect waves-light btn right"><i class="material-icons">add</i></button>
+			<button id="remove-multiplicacion" class="waves-effect waves-light btn right"><i class="material-icons">remove</i></button>
+		</div>
+		<div class="row">{{{matrices}}}</div>
+		<div class="row"><h5>Resultado</h5>{{{resultado}}}</div>
+	</script>
+	<script id="matriz-template" type="text/x-handlebars-template">
+		<div class="matriz offset-l{{offset}} col l{{size}} {{direction}}">
+			{{#list inputs}}{{{content}}}{{/list}}
+		</div>
+	</script>
+	<script id="casilla-template" type="text/x-handlebars-template">
+		<div class="col l{{size}}">
+			<input type="number">
+		</div>
+	</script>
 </body>
 </html>
